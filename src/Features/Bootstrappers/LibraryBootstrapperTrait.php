@@ -58,7 +58,7 @@ trait LibraryBootstrapperTrait
     protected function buildSpecCompilator(): Compilator
     {
         return new Compilator([
-            new InheritanceCompiler(),
+            new InheritanceCompiler($this->getService('analyzer.config')),
             new FactoryCompiler()
         ]);
     }
