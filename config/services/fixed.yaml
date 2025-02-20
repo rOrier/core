@@ -12,6 +12,8 @@ factory.services:
   fixed: true
 analyzer.config:
   fixed: true
+analyzer.config.inheritance:
+  fixed: true
 compilator.spec.services:
   fixed: true
 builder.workbench.services:
