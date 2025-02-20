@@ -3,6 +3,8 @@
 namespace ROrier\Core\Features\Bootstrappers;
 
 use Exception;
+use ROrier\Config\Services\Analyzer;
+use ROrier\Config\Services\ConfigParsers\ArrayParameterParser;
 use ROrier\Container\Interfaces\ServiceLibraryInterface;
 use ROrier\Core\Components\DataLoader;
 use ROrier\Core\Interfaces\KernelInterface;
@@ -60,6 +62,16 @@ trait LibraryBootstrapperTrait
         return new Compilator([
             new InheritanceCompiler($this->getService('analyzer.config')),
             new FactoryCompiler()
+        ]);
+    }
+
+    /**
+     * @return Analyzer
+     */
+    protected function buildConfigInheritanceAnalyzer(): Analyzer
+    {
+        return new Analyzer([
+            new ArrayParameterParser($this->getDelayedParameters())
         ]);
     }
 }

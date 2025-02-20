@@ -27,6 +27,7 @@ class Bootstrapper
         'kernel' => 'buildKernel',
         'parameters' => 'buildParameters',
         'analyzer.config' => 'buildConfigAnalyzer',
+        'analyzer.config.inheritance' => 'buildConfigInheritanceAnalyzer',
         'analyzer.argument' => 'buildArgumentAnalyzer',
         'library.services' => 'buildLibrary',
         'container' => 'buildContainer',
